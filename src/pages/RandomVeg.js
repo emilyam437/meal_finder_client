@@ -58,7 +58,7 @@ let answer = window.confirm(details)
       }
 
   const fetchMeal = async (details) => {
-      await Axios.get(`http://localhost:8000/recipe/${details}`).then((res)=>{
+      await Axios.get(`https://meal-finder-ingredients.herokuapp.com/recipe/${details}`).then((res)=>{
         if (res.data['id']){
         setRecipeTitle(res.data['title'])
         setImg(res.data['image'])
@@ -74,7 +74,7 @@ let answer = window.confirm(details)
     }
 
     const getUrl = () => {
-        Axios.get(`http://localhost:8000/link/${recipeId}`).then((res)=>{
+        Axios.get(`https://meal-finder-ingredients.herokuapp.com/link/${recipeId}`).then((res)=>{
           setSourceUrl(res.data["sourceUrl"])
           let newArr = []
           setShowInfoButton(false);

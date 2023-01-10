@@ -18,7 +18,7 @@ function Random() {
 
 
   const getReqMeal = async (newUrl) => {
-    await axios.get(`http://localhost:8000/recipe/${newUrl}`).then((res)=>{
+    await axios.get(`https://meal-finder-ingredients.herokuapp.com/recipe/${newUrl}`).then((res)=>{
       setRecipeTitle(res.data['title']);
       setImg(res.data['image']);
       setRecipeId(res.data["id"]);
@@ -67,7 +67,7 @@ function Random() {
   }
 
   const getUrl = () => {
-    Axios.get(`http://localhost:8000/link/${recipeId}`)
+    Axios.get(`https://meal-finder-ingredients.herokuapp.com/link/${recipeId}`)
     .then((res)=>{
       setSourceUrl(res.data["sourceUrl"])
       setShowInfoButton(false);

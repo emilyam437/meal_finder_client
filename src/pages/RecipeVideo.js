@@ -38,7 +38,7 @@ function RecipeVideo() {
 
     const fetchMeal = async (ingredients) => {
       try {
-        await Axios.get(`http://localhost:8000/video/${ingredients}`)
+        await Axios.get(`https://meal-finder-ingredients.herokuapp.com/video/${ingredients}`)
     .then((res)=>{
         if (res.data['videos'].length>0){
         setRecipeTitle(res.data['videos'][0]['shortTitle'])
@@ -48,13 +48,10 @@ function RecipeVideo() {
         setYoutubeUrl('https://www.youtube.com/watch?v='+res.data['videos'][0]['youTubeId']);
         } else {
           console.log('no search results')
-                // let ingredList = ['pasta', 'chicken', 'tomato', 'sugar']
-                // let ingred = ingredList[Math.floor(ingredList.length*Math.random)]
-                // fetchMeal(`http://localhost:8000/video/${ingred}`)
         }
     })}
     catch(error) {
-      await Axios.get(`http://localhost:8000/video-random`)
+      await Axios.get(`https://meal-finder-ingredients.herokuapp.com/video-random`)
       .then((res)=>{
           setRecipeTitle(res.data['videos'][0]['shortTitle'])
           setImg(res.data['videos'][0]['thumbnail'])
