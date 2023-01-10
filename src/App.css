@@ -1,38 +1,126 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
 .App {
+  display: grid;
+  grid-template-columns: 0.5fr 2.5fr;
+  height: 45em;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button {
+  padding: 2px;
+}
+
+
+/* Nav Bar */
+
+.navBarCont {
+  width: 200px;
+  height: 700px;
+  background-color: #99ff99;
+  height: 100%;
+}
+
+.navItem {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a, a:visited {
+  color: #00b300;
+}
+
+a:hover {
+  color: #0000ff;
+  cursor: pointer;
+}
+
+h4 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Random Meal Page */
+
+.randomCont {
+  text-align: center;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.addButton {
+  margin-left: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.getButton {
+  margin-top: 6px;
 }
 
-.App-link {
-  color: #61dafb;
+.removeButton:hover {
+  background-color: aliceblue;
+  color: #006666;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pageTitle {
+  text-align: center;
+  padding: 15px;
+}
+
+.sideTitle {
+  font-weight: 400;
+  font-size: 28px;
+  text-align: center;
+}
+
+.photoIngredsCont {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr;
+}
+
+.ingredsCont {
+  text-align: left;
+}
+
+.moreInfoButton {
+  margin: 8px;
+}
+
+/* Intolerances / Veg Page */
+
+.intolerancesCont {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.wontIncludeCont {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1.5fr;
+}
+
+.ingredsContCol3 {
+  text-align: start;
+}
+
+.recipeRestCont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.vegImgCont, .pCenter {
+  text-align: center;
+}
+
+/* Video Page */
+
+.videoPageCont{
+  text-align: center;
 }

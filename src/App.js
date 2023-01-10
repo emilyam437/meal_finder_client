@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Random from './pages/RandomRecipe';
+import ErrorPage from './pages/ErrorPage';
+import RandomVeg from './pages/RandomVeg';
+import RecipeVideo from './pages/RecipeVideo';
+import Nav from './pages/Nav';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<div className="App">
+<Router>
+<Nav />
+        <Routes>
+          <Route path='/random-meal' element={<Random />} />
+          <Route path='/random-veg' element={<RandomVeg />} />
+          <Route path='/video' element={<RecipeVideo />} /> 
+          <Route path='/' element={<Random />} />
+          <Route path="*" element={<ErrorPage/>} />
+        </Routes>
+      </Router>
+
+</div>
   );
 }
 
