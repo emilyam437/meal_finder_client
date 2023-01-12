@@ -41,6 +41,7 @@ app.get('/by-ingredients/:ingredients', async(req, res)=>{
     const ingredients = req.params.ingredients
     console.log(ingredients)
     await Axios.get(`${spoonUrlBaseIngredients}${ingredients}&number=1&apiKey=${spoonApi}`)
+    console.log(`${spoonUrlBaseIngredients}${ingredients}&number=1&apiKey=${spoonApi}`)
     .then((response)=>{
         res.json(response.data[0])
     }).catch((error)=>{
