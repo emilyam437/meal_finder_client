@@ -23,7 +23,7 @@ function RandomVeg() {
       if (diets.length > 0) {
         details = details+"diet="
 
-      for (let i=0; i<= counter; i++) {
+      for (let i=0; i<= diets.length; i++) {
           if (diets[i]) {
               details = details + diets[i]+',+'
             }
@@ -33,7 +33,7 @@ function RandomVeg() {
 
       if (intols.length > 0) {
         details = details+"&intolerances="
-            for (let i=0; i<= counter; i++) {
+            for (let i=0; i<= intols.length; i++) {
                 if (intols[i]) {
                     details = details + intols[i]+',+'
                 }
@@ -43,7 +43,6 @@ function RandomVeg() {
 
       if (searchIngredients.length > 0) {
         details = details +"&includeIngredients="
-
           for (let i=0; i<= counter; i++) {
             if (searchIngredients[i]) {
             details = details + searchIngredients[i]+',+'

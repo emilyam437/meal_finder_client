@@ -123,8 +123,8 @@ function Random() {
              </div>
 })}
 <br/>
-{usedListDetail.length>0 ? <button onClick={resetAll}>New Recipe</button> : 
-<button className="getButton" onClick={fetchRecipe}> Get meal! </button>}
+{usedListDetail.length>0 && <button onClick={resetAll}>New Recipe</button> } 
+{searchIngredients.length > 0 && <button className="getButton" onClick={fetchRecipe}> Get meal! </button>}
 <br/>
 <br/>
 <h2 className="sideTitle">{recipeTitle}</h2>
