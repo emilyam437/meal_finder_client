@@ -17,10 +17,8 @@ function Random() {
   const [showIngredInput, setShowIngredInput] = useState(true);
 
 
-  const getReqMeal = async (newUrl) => {
-    alert(`https://meal-finder-ingredients.herokuapp.com/recipe/${newUrl}`)
-    await axios.get(`https://meal-finder-ingredients.herokuapp.com/recipe/${newUrl}`).then((res)=>{
-      alert(`https://meal-finder-ingredients.herokuapp.com/recipe/${newUrl}`)
+  const getReqMeal = async (urlIngredients) => {
+    await axios.get(`https://meal-finder-ingredients.herokuapp.com/by-ingredients/${urlIngredients}`).then((res)=>{
       setRecipeTitle(res.data['title']);
       setImg(res.data['image']);
       setRecipeId(res.data["id"]);
@@ -55,16 +53,16 @@ function Random() {
 
   const fetchRecipe = () => {
 
-    let newUrl = ""
+    let urlIngredients = ""
     for (let i=0; i<= counter; i++) {
       if (searchIngredients[i]) {
-      newUrl = newUrl + searchIngredients[i]+',+'
+        urlIngredients = urlIngredients + searchIngredients[i]+',+'
     } }
-    newUrl = newUrl.slice(0, -2)
+    urlIngredients = urlIngredients.slice(0, -2)
     let answer = 'yes'
 
     if (answer) {
-      getReqMeal(newUrl);
+      getReqMeal(urlIngredients);
     }
   }
 
