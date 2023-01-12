@@ -28,7 +28,7 @@ function Random() {
       let missedDetail = []
       for (let i=0; i<30; i++) {
         try {
-        missedDetail.push(res.data[0]['missedIngredients'][i]['original'])
+        missedDetail.push(res.data['missedIngredients'][i]['original'])
         } catch {
             break;
         }
@@ -38,7 +38,7 @@ function Random() {
       let usedDetail = []
       for (let i=0; i<30; i++) {
         try {
-        usedDetail.push(res.data[0]['usedIngredients'][i]['original'])
+        usedDetail.push(res.data['usedIngredients'][i]['original'])
         } catch {
             break;
         }
