@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import React, {useState, useEffect } from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 
 function Random() {
@@ -124,7 +124,7 @@ function Random() {
 })}
 <br/>
 {usedListDetail.length>0 && <button onClick={resetAll}>New Recipe</button> } 
-{searchIngredients.length > 0 && <button className="getButton" onClick={fetchRecipe}> Get meal! </button>}
+{searchIngredients.length > 0 && usedListDetail.length===0 && <button className="getButton" onClick={fetchRecipe}> Get meal! </button>}
 <br/>
 <br/>
 <h2 className="sideTitle">{recipeTitle}</h2>

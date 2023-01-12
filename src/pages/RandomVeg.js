@@ -48,9 +48,10 @@ function RandomVeg() {
             details = details + searchIngredients[i]+',+'
         } 
       }
-      details = details .slice(0, -2)
+      details = details.slice(0, -2)
 } 
-let answer = window.confirm(details)     
+//let answer = window.confirm(details)  
+let answer='yes'   
   if (answer) {
           fetchMeal(details);
         }

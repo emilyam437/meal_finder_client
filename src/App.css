@@ -3,10 +3,12 @@
   padding: 0px;
 }
 
+@media (min-width: 800px) {
 .App {
   display: grid;
   grid-template-columns: 0.5fr 2.5fr;
   height: 45em;
+}
 }
 
 button:hover {
@@ -20,11 +22,59 @@ button {
 
 /* Nav Bar */
 
+@media (max-width: 799px) {
+  .navBarCont {
+    background-color: #99ff99;
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    padding-bottom: 12px;
+  }
+
+  @media (max-width: 600px) {
+    .mobileNav {
+      font-size: smaller;
+    }
+  }
+  
+  .mobileNav {
+    display: block;
+    float: left;
+    margin-left: 12px;
+  }
+
+  .App {
+    margin-top: 50px;
+  }
+  
+  a {
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  a, a:visited {
+    color: #00b300;
+  }
+  
+  a:hover {
+    color: #0000ff;
+    cursor: pointer;
+  }
+  
+   h4 {
+    color: #00b300;
+  } 
+}
+
+
+@media (min-width: 800px) {
 .navBarCont {
   width: 200px;
   height: 700px;
   background-color: #99ff99;
   height: 100%;
+  overflow: hidden;
 }
 
 .navItem {
@@ -48,6 +98,7 @@ a:hover {
 
 h4 {
   text-align: center;
+}
 }
 
 /* Random Meal Page */
