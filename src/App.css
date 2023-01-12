@@ -67,6 +67,52 @@ button {
   } 
 }
 
+@media screen and (max-width: 799px) {
+  .navBarCont {
+    background-color: #99ff99;
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    padding-bottom: 12px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .mobileNav {
+      font-size: smaller;
+    }
+  }
+  
+  .mobileNav {
+    display: block;
+    float: left;
+    margin-left: 12px;
+  }
+
+  .App {
+    margin-top: 50px;
+  }
+  
+  a {
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  a, a:visited {
+    color: #00b300;
+  }
+  
+  a:hover {
+    color: #0000ff;
+    cursor: pointer;
+  }
+  
+   h4 {
+    color: #00b300;
+  } 
+}
+
+
 
 @media (min-width: 800px) {
 .navBarCont {
