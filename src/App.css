@@ -180,12 +180,12 @@ h4 {
 }
 
 .photoIngredsCont {
-  display: grid;
-  grid-template-columns: 1.5fr 1.5fr;
+  display: flex;
+  flex-direction: column;
 }
 
 .ingredsCont {
-  text-align: left;
+  text-align: center;
 }
 
 .moreInfoButton {

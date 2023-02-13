@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import React, {useState} from 'react';
 import axios from 'axios';
+import { ColorRing } from 'react-loader-spinner';
 
 function Random() {
 
@@ -15,15 +16,18 @@ function Random() {
   const [sourceUrl, setSourceUrl] = useState ("");
   const [showInfoButton, setShowInfoButton] = useState(false);
   const [showIngredInput, setShowIngredInput] = useState(true);
+  const [loading, setLoading] = useState(false);
 
 
   const getReqMeal = async (urlIngredients) => {
+    setLoading(true);
     await axios.get(`https://meal-finder-ingredients.herokuapp.com/by-ingredients/${urlIngredients}`).then((res)=>{
       setRecipeTitle(res.data['title']);
       setImg(res.data['image']);
       setRecipeId(res.data["id"]);
       setShowInfoButton(true);
       setShowIngredInput(false);
+      setLoading(false);
 
       let missedDetail = []
       for (let i=0; i<30; i++) {
@@ -97,7 +101,7 @@ function Random() {
     }
   }
 
-  return (
+return (
     <div className="randomCont">
 
 <h1 className="pageTitle">Meal Finder</h1>
@@ -125,6 +129,7 @@ function Random() {
 <br/>
 {usedListDetail.length>0 && <button onClick={resetAll}>New Recipe</button> } 
 {searchIngredients.length > 0 && usedListDetail.length===0 && <button className="getButton" onClick={fetchRecipe}> Get meal! </button>}
+{loading && <ColorRing /> }
 <br/>
 <br/>
 <h2 className="sideTitle">{recipeTitle}</h2>
@@ -133,12 +138,13 @@ function Random() {
 
 
 {img && <div><img src={img} alt="Recommended recipe"></img></div>}
+
 <div className="ingredsCont">
 {missedListDetail.length>0 && <h3 className="sideSubHead">Ingredients:</h3>}
 
 {usedListDetail.map((value, key) => {
           return <div key={key}>
-            <p>🗸 {value} </p>
+            <p>- {value} </p>
              </div>
 })}
 {missedListDetail.map((value, key) => {

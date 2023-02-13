@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
+import { ColorRing } from 'react-loader-spinner';
 
 function RecipeVideo() {
 
@@ -11,6 +12,7 @@ function RecipeVideo() {
     const [input, setInput] = useState("");
     const [showInfoButton, setShowInfoButton] = useState(false);
     const [showIngredInput, setShowIngredInput] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const fetchRecipe = () => {
 
@@ -37,6 +39,7 @@ function RecipeVideo() {
       }
 
     const fetchMeal = async (ingredients) => {
+      setLoading(true);
       try {
         await Axios.get(`https://meal-finder-ingredients.herokuapp.com/video/${ingredients}`)
     .then((res)=>{
@@ -46,6 +49,7 @@ function RecipeVideo() {
         setShowInfoButton(true);
         setShowIngredInput(false);
         setYoutubeUrl('https://www.youtube.com/watch?v='+res.data['videos'][0]['youTubeId']);
+        setLoading(false);
         } else {
           console.log('no search results')
         }
@@ -58,6 +62,7 @@ function RecipeVideo() {
           setShowInfoButton(true);
           setShowIngredInput(false);
           setYoutubeUrl('https://www.youtube.com/watch?v='+res.data['videos'][0]['youTubeId']);
+          setLoading(false);
     })
     }
   }
@@ -115,6 +120,7 @@ function RecipeVideo() {
 <br/>
 {recipeTitle && <button onClick={resetAll}> New Recipe </button>}
 {(searchIngredients.length>0) && (!recipeTitle) && <button className="getButton" onClick={fetchRecipe}> Get Video </button>}
+{loading && <ColorRing /> }
 <br/>
 <br/>
 <h2 className="sideTitle">{recipeTitle}</h2>
