@@ -161,14 +161,11 @@ let answer='yes'
         <input type="checkbox" id="intolerance9" name="intolerance9" value="Sulfite" onChange={(e)=>(toggleIntolerance(e))}/>
         <label for="intolerance9">Sulfite</label><br/>
 
-        <input type="checkbox" id="intolerance10" name="intolerance10" value="Tree" onChange={(e)=>(toggleIntolerance(e))}/>
-        <label for="intolerance10">Tree</label><br/>
+        <input type="checkbox" id="intolerance10" name="intolerance10" value="Tree Nut" onChange={(e)=>(toggleIntolerance(e))}/>
+        <label for="intolerance10">Tree Nut</label><br/>
 
-        <input type="checkbox" id="intolerance11" name="intolerance11" value="Nut" onChange={(e)=>(toggleIntolerance(e))}/>
-        <label for="intolerance11">Nut</label><br/>
-
-        <input type="checkbox" id="intolerance12" name="intolerance12" value="Wheat" onChange={(e)=>(toggleIntolerance(e))}/>
-        <label for="intolerance12">Wheat</label><br/>
+        <input type="checkbox" id="intolerance12" name="intolerance11" value="Wheat" onChange={(e)=>(toggleIntolerance(e))}/>
+        <label for="intolerance11">Wheat</label><br/>
         </div>
         <div>
         <input type="checkbox" id="vegi1" name="vegi1" value="Vegetarian" onChange={(e)=>(toggleDiet(e))}/>
